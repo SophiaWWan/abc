@@ -1,0 +1,143 @@
+body{
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fdf6e3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.main-wrapper{
+    width: 100%;
+    max-width: 500px; 
+    height: 100dvh;
+    background-color: #fff5e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #e0dcdc;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#threadWrapper{
+    background-color: #e0f7fa;
+    flex-grow: 1;
+    margin: 15px 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#threadWrapper ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+#threadWrapper li{
+    margin: 0;
+    padding: 6px 10px;
+    border-radius: 12px;
+    max-width: 80%;
+    word-wrap: break-word;
+    display: flex;
+    align-items: center;
+}
+
+.who{
+    background-color: #99c5fc;
+    padding: 2px 6px;
+    border-radius: 8px;
+    margin-right: 5px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+.words{
+    background-color: #fffacd;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+#threadWrapper li:nth-child(even){
+    background-color: #b0f0e5;
+}
+
+
+#chatForm{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+#chatForm input{
+    flex-grow: 1;
+    height: 32px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#chatForm button{
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #99c5fc;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#chatForm button:hover{
+    background-color: #78a8e0;
+}
+
+
+#nameWrapper{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#nameWrapper input{
+    height: 28px;
+    padding: 3px 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#nameWrapper button{
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: rgb(184, 241, 154);
+    color: #383838;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#nameWrapper button:hover{
+    background-color: #b6ec9f;
+}
+
+#nameWrapper p{
+    display: inline;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
