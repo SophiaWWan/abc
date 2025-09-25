@@ -1,7 +1,10 @@
+/* y2k style */
 body{
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #fdf6e3;
+    /* 像素感背景 */
+    background: url(https://www.transparenttextures.com/patterns/pixel-dots-vaporwave.png);
+    background-color: #ff00ff; /* 霓虹紫 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,19 +16,19 @@ body{
     width: 100%;
     max-width: 500px; 
     height: 100dvh;
-    background-color: #fff5e6;
+    background-color: #00ffff; /* 青色背景 */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10px;
+    padding: 15px;
     box-sizing: border-box;
-    border: 1px solid #e0dcdc;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    /* 3D 浮雕效果 */
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0px #000, 8px 8px 0px #ff00ff;
 }
 
 #threadWrapper{
-    background-color: #e0f7fa;
+    background-color: #e6e6e6; /* 浅灰色背景 */
     flex-grow: 1;
     margin: 15px 0; 
     display: flex;
@@ -33,7 +36,13 @@ body{
     justify-content: flex-end;
     overflow-y: auto;
     padding: 10px;
-    border-radius: 8px;
+    /* 3D 凹陷效果 */
+    border: 3px solid #000;
+    border-top-color: #555;
+    border-left-color: #555;
+    border-bottom-color: #ccc;
+    border-right-color: #ccc;
+    box-shadow: inset 2px 2px 0px #000;
 }
 
 #threadWrapper ul{
@@ -42,14 +51,19 @@ body{
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 }
-
 
 #threadWrapper li{
     margin: 0;
-    padding: 6px 10px;
-    border-radius: 12px;
+    padding: 8px 12px;
+    /* 3D 浮雕对话框 */
+    border: 2px solid #000;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-bottom-color: #555;
+    border-right-color: #555;
+    background-color: #fff;
     max-width: 80%;
     word-wrap: break-word;
     display: flex;
@@ -57,87 +71,107 @@ body{
 }
 
 .who{
-    background-color: #99c5fc;
-    padding: 2px 6px;
-    border-radius: 8px;
-    margin-right: 5px;
+    background-color: #ff00ff;
+    padding: 4px 8px;
+    border-radius: 0; /* 移除圆角 */
+    margin-right: 8px;
     font-style: italic;
     font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 0px #000;
 }
-
 
 .words{
-    background-color: #fffacd;
+    background-color: #00ffff;
     padding: 4px 8px;
-    border-radius: 8px;
+    border-radius: 0;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000;
+    text-shadow: 1px 1px 0px #fff;
 }
-
 
 #threadWrapper li:nth-child(even){
-    background-color: #b0f0e5;
+    background-color: #ff00ff; /* 偶数行不同颜色 */
 }
-
+#threadWrapper li:nth-child(even) .words {
+    background-color: #00ffff;
+}
 
 #chatForm{
     display: flex;
     justify-content: space-between;
-    gap: 5px;
+    gap: 8px;
 }
 
 #chatForm input{
     flex-grow: 1;
-    height: 32px;
+    height: 40px;
     padding: 4px 8px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    /* 输入框的 3D 凹陷效果 */
+    border: 3px solid #000;
+    border-top-color: #555;
+    border-left-color: #555;
+    border-bottom-color: #ccc;
+    border-right-color: #ccc;
     outline: none;
+    background-color: #e6e6e6;
 }
 
 #chatForm button{
-    padding: 6px 12px;
-    border-radius: 8px;
-    border: none;
-    background-color: #99c5fc;
+    padding: 8px 16px;
+    border: 3px solid #000;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-bottom-color: #555;
+    border-right-color: #555;
+    background-color: #ff00ff;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
 }
 
 #chatForm button:hover{
-    background-color: #78a8e0;
+    background-color: #e600e6;
 }
-
 
 #nameWrapper{
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
 }
 
 #nameWrapper input{
-    height: 28px;
+    height: 32px;
     padding: 3px 6px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 3px solid #000;
+    border-top-color: #555;
+    border-left-color: #555;
+    border-bottom-color: #ccc;
+    border-right-color: #ccc;
     outline: none;
+    background-color: #e6e6e6;
 }
 
 #nameWrapper button{
-    padding: 5px 10px;
-    border-radius: 6px;
-    border: none;
-    background-color: rgb(184, 241, 154);
-    color: #383838;
+    padding: 6px 12px;
+    border: 3px solid #000;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-bottom-color: #555;
+    border-right-color: #555;
+    background-color: #00ffff;
+    color: #000;
     font-weight: bold;
     cursor: pointer;
 }
 
 #nameWrapper button:hover{
-    background-color: #b6ec9f;
+    background-color: #00e6e6;
 }
 
 #nameWrapper p{
     display: inline;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000;
+    text-shadow: 1px 1px 0px #fff;
 }
