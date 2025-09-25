@@ -6,7 +6,7 @@ const fs = require("fs");
 
 const app = express(); // the server "app", the server behaviour
 // const portHTTP = 3000; // port for http
-const portHTTPS = 3001; // port for https
+const portHTTPS = 4274; // port for https
 
 // returning to the client anything that is
 // inside the public folder
@@ -15,10 +15,10 @@ app.use(express.static('public'));
 
 // Creating object of key and certificate
 // for SSL
-const options = {
-    key: fs.readFileSync("localhost-key.pem"),
-    cert: fs.readFileSync("localhost.pem"),
-};
+// const options = {
+//     key: fs.readFileSync("localhost-key.pem"),
+//     cert: fs.readFileSync("localhost.pem"),
+// };
 
 
 

@@ -1,4 +1,4 @@
-//initialize socket connection
+// initialize socket connection
 const socket = io();
 let username = "";
 const nameInput = document.querySelector("#nameWrapper input");
@@ -6,6 +6,17 @@ const confirmBtn = document.querySelector("#confirmBtn");
 
 let formeElm = document.querySelector("#chatForm");
 let msgInput = document.querySelector("#newMessage");
+
+const emojiMap = {
+    "!": "Σ(っ °Д °;)っ",
+    "?": "(・_・;)",
+    "！": "✧٩(ˊωˋ*)و✧",
+    "？": "╮(╯_╰)╭",
+    "哈": "╮(￣▽￣)╭",
+    "whattt": "✧٩(ˊωˋ*)و✧",
+    "6": "（￣︶￣）↗　",
+    "加油": "o(*￣▽￣*)ブ"
+};
 
 // LISTEN FOR NEWLY TYPED MESSAGES, 
 // SEND THEM TO THE SERVER
@@ -30,6 +41,10 @@ function newMessagesSubmitted(event){
 
     let newMsg = msgInput.value.trim();
     if (!newMsg) return;
+
+    if (emojiMap.hasOwnProperty(newMsg)) {
+        newMsg = emojiMap[newMsg];
+    }
 
     socket.emit("message", {
         sender: username,
