@@ -1,0 +1,140 @@
+/* style.css - Cute Dashboard Theme (Purple/Pink Edition) */
+
+body {
+    margin: 0;
+    /* FIX: 浅紫色渐变背景 */
+    background: linear-gradient(135deg, #f0e8ff 0%, #e8e0ff 100%);
+    color: #3b3b3b; /* 保持主要文本为深色以确保可读性 */
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    padding: 10px; /* 减小整体内边距 */
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px; /* 减小页眉底部外边距 */
+    padding: 10px 0;
+    /* 紫色虚线分隔符 */
+    border-bottom: 2px dashed #b19cd9; 
+}
+
+.header h1 {
+    /* FIX: 字体颜色改为亮粉色 */
+    color: #ff6699; 
+    font-size: 2em; /* 减小标题字体大小 */
+    font-weight: 900;
+}
+
+.header p {
+    color: #7f8c8d;
+    font-size: 1em; /* 减小副标题字体大小 */
+}
+
+#status-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #b19cd9; /* 柔和的紫色 */
+    padding: 20px;
+}
+
+#cat-grid-container {
+    display: grid;
+    /* FIX: 减小最小宽度到 150px，允许更紧凑的布局 */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px; /* 减小网格间距 */
+    padding: 5px; /* 减小网格容器内边距 */
+}
+
+.cat-card {
+    background-color: #ffffff;
+    border-radius: 15px; /* 略微减小圆角 */
+    padding: 15px 10px; /* <<-- 进一步增加垂直填充：10px -> 15px */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* 减小阴影 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* 保持粉色边框 */
+    border: 3px solid #ffccdd; 
+}
+
+.cat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.2em; /* 减小标题字体大小 */
+    font-weight: 900;
+    /* 保持亮粉色 */
+    color: #ff6699; 
+    margin-bottom: 2px; /* 减小底部外边距 */
+    text-align: center;
+}
+
+.owner-info {
+    font-size: 0.8em; /* 减小拥有者信息字体大小 */
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 2px; /* 减小底部外边距 */
+}
+
+.status-badge {
+    display: block; /* 强制占据一行 */
+    padding: 5px 8px; /* 略微增加垂直内边距 */
+    border-radius: 10px; /* 减小徽章圆角 */
+    font-weight: bold;
+    margin: 5px 0; /* <<-- 增加垂直外边距：3px -> 5px */
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 0.85em; /* 减小徽章字体大小 */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+}
+
+/* Status Colors (调整颜色以匹配紫色主题，但保留辨识度) */
+.status-studying { background-color: #ff99cc; color: white; } /* 粉色 */
+.status-bathing { background-color: #a3d9ff; color: #3b3b3b; } /* 浅蓝色 */
+.status-eating { background-color: #fffac7; color: #3b3b3b; } /* 奶油黄 */
+.status-sports { background-color: #c0ffc0; color: #3b3b3b; } /* 浅绿色 */
+.status-dressing { background-color: #e0b0ff; color: #3b3b3b; } /* 浅紫色 */
+.status-sleeping { background-color: #cccccc; color: #666666; } /* 灰色 */
+
+.type-and-progress {
+    margin-top: 8px; /* <<-- 增加顶部外边距：5px -> 8px */
+    padding-top: 2px; /* 减小顶部内边距 */
+    /* 保持粉色虚线分隔符 */
+    border-top: 1px dashed #ffccdd;
+}
+
+.cat-type {
+    display: block;
+    font-weight: 900;
+    color: #7f8c8d;
+    margin-bottom: 1px; /* 减小底部外边距 */
+    font-size: 0.8em; /* 减小字体大小 */
+}
+.cat-type span {
+    /* 猫咪类型文字使用主题粉色 */
+    color: #ff6699; 
+    font-size: 1em; 
+}
+
+.chinese-data p {
+    margin: 1px 0; /* 保持最小间距 */
+    font-size: 0.8em; /* 减小字体大小 */
+}
+.chinese-data strong {
+    /* 学习数据强调文字使用主题粉色 */
+    color: #ff6699;
+    font-weight: 700;
+}
+
+/* 媒体查询：针对小屏幕（手机）强制 3 列布局，确保至少看到 6 张卡片 */
+@media (max-width: 600px) {
+    #cat-grid-container {
+        /* 在小屏幕上强制最小宽度为 3 列 */
+        grid-template-columns: repeat(3, minmax(80px, 1fr)); 
+        gap: 8px; /* 进一步减小间距 */
+        padding: 5px;
+    }
+    body {
+        padding: 5px; /* 减小手机屏幕的 body 边距 */
+    }
+}

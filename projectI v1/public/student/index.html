@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Chinese Cat Game</title>
+    <!-- FIX: 修正引用路径。由于 index.html 和 style.css 在同一目录下，直接使用文件名 -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div id="canvas-container">
+            <!-- Content (Sign-in form or Game UI) will be injected here by script.js -->
+        </div>
+        
+        <!-- Platform requirement, hidden by script.js after load -->
+        <a href="#ready" id="ready"><button>Ready</button></a>
+
+        <!-- Audio Player for Cat Sounds -->
+        <audio id="cat-sound-player" preload="auto"></audio>
+    </div>
+
+    <!-- Socket.IO Library -->
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <!-- FIX: 修正引用路径。由于 index.html 和 script.js 在同一目录下，直接使用文件名 -->
+    <script src="script.js"></script>
+</body>
+</html>

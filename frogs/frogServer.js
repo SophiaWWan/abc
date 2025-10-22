@@ -80,6 +80,7 @@ io.on('connection', (socket) => {
             frogs.splice(idx, 1);
             console.log(frogs);
         }else if(conductor == socket.id){
+            //if conductor disconnected, conductor socket id variable
             conductor = undefined;
         }
 

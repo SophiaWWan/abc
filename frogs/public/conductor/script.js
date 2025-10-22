@@ -26,17 +26,26 @@ socket.on("all-frogs", function(data){
     // once we get info about all current frogs from the server
     // we loop over them (they arrive in the form of an array)
     for(let i = 0; i < data.length; i++){
-        // let frog = data[i];
+        let frog = data[i];
         // and then, in each iteration of the loop
         // we pick out one frog from the array 
         // and add it to the page with the function that
         // is defined further below
-        addFrog(data[i].id, data[i].frogIdx);
+        addFrog(frog.id, frog.frogIdx);
     }
 
 })
 
+socket.on("new-frog", function(frog){
+    console.log(frog);
+    addFrog(frog.id, frog.frogIdx);
+})
 
+socket.on("delete-frog", function(frog){
+    //delete frog from the page
+    console.log(frog);
+    document.querySelector("#A"+frog).remove();
+})
 // addFrog("sdfobjweq", 0); // function test
 
 function addFrog(socketID, frogIdx){
@@ -51,10 +60,11 @@ function addFrog(socketID, frogIdx){
 
     // button socket communication:
     imgElm.addEventListener("click", function(){
-        document.querySelector("A"+socketID).style.opacity = 0.3;
+        document.querySelector("#A"+socketID).style.opacity = 0.3;
         setTimeout(function(){
-            document.querySelector("A"+socketID).style.opacity = 1;
+            document.querySelector("#A"+socketID).style.opacity = 1;
         }, 500)
+        socket.emit("trigger-frog", socketID)
 
     })
 }

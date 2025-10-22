@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    overflow: hidden;
+}
+
+.main-wrapper{
+    width:100%;
+    height:100dvh;
+    background-color: #fcdddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+
+#roomImg{
+    /* transition: width; */
+    width: 120%;
+    right: 2px;
+
+}
+
+#callcatbtn{
+    position: fixed;
+    top: 30px;
+    width: 40%;
+}
+
+#incomingCat{
+    position: fixed;
+    left: -1px;
+    bottom: 25%;
+    width: 80%;
+    display: none;
+
+}
+#leavingCat{
+    position: fixed;
+    right: 1px;
+    bottom: 25%;
+    width: 80%;
+    display: none;
+
+}
