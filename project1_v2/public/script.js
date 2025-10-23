@@ -1,8 +1,9 @@
 const CUT = 1;
-const parts = location.pathname.replace(/\/+$/,'').split('/').filter(Boolean);
+// const parts = location.pathname.replace(/\/+$/,'').split('/').filter(Boolean);
 // const base  = parts.length ? '/' + parts.slice(0, -CUT).join('/') : ''; // on SERVER...
-const base  = parts.length ? parts.slice(0, -CUT).join('/') : '';
-console.log(base);
+// const base  = parts.length ? parts.slice(0, -CUT).join('/') : '';
+// console.log(base);
+let base = "/sophia/port-4270"
 let socket;
 
 
