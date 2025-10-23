@@ -16,30 +16,30 @@ let foodbtn;
 let roomIdx;
 let incomingCat, leavingCat;
 const incomingCatSources = [
-    "../imgs/walkingcat0.png",
-    "../imgs/walkingcat1.png",
-    "../imgs/walkingcat2.png",
-    "../imgs/walkingcat3.png",
-    "../imgs/walkingcat4.png",
-    "../imgs/walkingcat5.png",
-    "../imgs/walkingcat6.png",
-    "../imgs/walkingcat7.png",
-    "../imgs/walkingcat8.png",
-    "../imgs/walkingcat9.png",
-    "../imgs/walkingcat10.png",
+    "imgs/walkingcat0.png",
+    "imgs/walkingcat1.png",
+    "imgs/walkingcat2.png",
+    "imgs/walkingcat3.png",
+    "imgs/walkingcat4.png",
+    "imgs/walkingcat5.png",
+    "imgs/walkingcat6.png",
+    "imgs/walkingcat7.png",
+    "imgs/walkingcat8.png",
+    "imgs/walkingcat9.png",
+    "imgs/walkingcat10.png",
 ]
 const leavingCatSources = [
-    "../imgs/walkingcat0.png",
-    "../imgs/walkingcat1.png",
-    "../imgs/walkingcat2.png",
-    "../imgs/walkingcat3.png",
-    "../imgs/walkingcat4.png",
-    "../imgs/walkingcat5.png",
-    "../imgs/walkingcat6.png",
-    "../imgs/walkingcat7.png",
-    "../imgs/walkingcat8.png",
-    "../imgs/walkingcat9.png",
-    "../imgs/walkingcat10.png",
+    "imgs/walkingcat0.png",
+    "imgs/walkingcat1.png",
+    "imgs/walkingcat2.png",
+    "imgs/walkingcat3.png",
+    "imgs/walkingcat4.png",
+    "imgs/walkingcat5.png",
+    "imgs/walkingcat6.png",
+    "imgs/walkingcat7.png",
+    "imgs/walkingcat8.png",
+    "imgs/walkingcat9.png",
+    "imgs/walkingcat10.png",
 ]
  const frameDuration = 300;
  let currentFrame = 0;
@@ -110,16 +110,16 @@ window.addEventListener("load", function(){ // event listener for content that h
 
 
     if(roomIdx == 0){
-        imgElm.src = "../imgs/diningroom1.PNG";
-        foodbtn.src = "../imgs/eatbtn.png";
+        imgElm.src = "imgs/diningroom1.PNG";
+        foodbtn.src = "imgs/eatbtn.png";
 
     }else if(roomIdx == 1){
-        imgElm.src = "../imgs/playroom1.PNG";
-        foodbtn.src = "../imgs/playbtn.png";
+        imgElm.src = "imgs/playroom1.PNG";
+        foodbtn.src = "imgs/playbtn.png";
 
     }else if(roomIdx == 2){
-        imgElm.src = "../imgs/sleeproom1.PNG";
-        foodbtn.src = "../imgs/sleepbtn.png";
+        imgElm.src = "imgs/sleeproom1.PNG";
+        foodbtn.src = "imgs/sleepbtn.png";
 
     }
     
@@ -251,13 +251,13 @@ function hideLeavingCat(){
 
 function showRoomWithCat(){
     if(roomIdx == 0){
-        imgElm.src = "../imgs/diningroom2.PNG";
+        imgElm.src = "imgs/diningroom2.PNG";
         // audioElm.play();
     }else if(roomIdx == 1){
-        imgElm.src = "../imgs/playroom2.PNG";
+        imgElm.src = "imgs/playroom2.PNG";
         // audioElm.play();
     }else if(roomIdx == 2){
-        imgElm.src = "../imgs/sleeproom2.PNG";
+        imgElm.src = "imgs/sleeproom2.PNG";
         // audioElm.play();
     }
     playSound();
@@ -266,11 +266,11 @@ function showRoomWithCat(){
 function showRoomWithoutCat(){
 
     if(roomIdx == 0){
-        imgElm.src = "../imgs/diningroom1.PNG";
+        imgElm.src = "imgs/diningroom1.PNG";
     }else if(roomIdx == 1){
-        imgElm.src = "../imgs/playroom1.PNG";
+        imgElm.src = "imgs/playroom1.PNG";
     }else if(roomIdx == 2){
-        imgElm.src = "../imgs/sleeproom1.PNG";
+        imgElm.src = "imgs/sleeproom1.PNG";
     }
     
 }
