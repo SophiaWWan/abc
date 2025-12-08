@@ -5,7 +5,7 @@ const https = require("https");
 const fs = require("fs");
 
 const app = express(); // the server "app", the server behaviour
-const portHTTPS = 4270; // port for https
+const portHTTPS = 4272; // port for https
 let images = [];
 
 // function getLatestPainterId() {
