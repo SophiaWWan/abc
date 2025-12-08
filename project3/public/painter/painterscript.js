@@ -20,7 +20,7 @@ const CUT = 1;
 
 let socket;
 if (location.hostname.toLowerCase().startsWith('browsercircus') || location.hostname.toLowerCase().startsWith('www')) {
-  socket = io({ path: "/sophia/port-4272/socket.io" });  // yields '/leon/port-4100/socket.io' or '/socket.io'
+  socket = io({ path: "/sophia/port-4270/socket.io" });  // yields '/leon/port-4100/socket.io' or '/socket.io'
 } else {
   socket = io();
 }
