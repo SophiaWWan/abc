@@ -111,7 +111,11 @@ app.post('/upload-photo', (req, res) => {
 
 // returning to the client anything that is
 // inside the public folder
-app.use("/sophia/port-4270", express.static("public"));
+
+const BASE = "/sophia/port-4270";  
+
+// serve static files
+app.use(BASE, express.static('public'));
 
 // Creating object of key and certificate
 // for SSL
