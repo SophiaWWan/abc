@@ -8,7 +8,7 @@ let zoomSpeed = 0.001;
 
 // window.addEventListener("deviceorientation", handleOrientation, true); // can be deleted later
 if(location.hostname.toLowerCase().startsWith('browsercircus') || location.hostname.toLowerCase().startsWith('www')){
-  socket = io({path: "/sophia/port-4271/socket.io"});  // yields '/leon/port-4100/socket.io' or '/socket.io'
+  socket = io({path: "/sophia/port-4271/display/socket.io"});  // yields '/leon/port-4100/socket.io' or '/socket.io'
 }else{
   socket = io(); 
 }
