@@ -177,7 +177,7 @@ sendButton.addEventListener("click", function () {
 
 function sendImageToServer(blob) {
   console.log(blob);
-  fetch('/upload-photo', {
+  fetch('upload-photo', {
     method: 'POST',
     headers: { 'Content-Type': 'image/png' }, // or jpg
     body: blob
