@@ -35,6 +35,7 @@ let hasUploaded = false;
 let pg;
 let sendButton = document.querySelector("#sendButton");
 let eraserButton = document.querySelector("#eraserButton");
+let brushButton = document.querySelector("#brushButton");
 
 // window.addEventListener("deviceorientation", handleOrientation, true); // can be deleted later
 
@@ -75,21 +76,23 @@ console.log(data);
 //     pg.line(pmouseX, pmouseY, mouseX, mouseY);
 // }
 eraserButton.addEventListener("click", function () {
-  if (isErasing) {
-    isErasing = false;
-    isWaterpaint = true;
-    isDrafting = false;
-    eraserButton.innerText = "BrushA";
-  } else if (isWaterpaint) {
-    isErasing = false;
+  isErasing = true;
+  isWaterpaint = false;
+  isDrafting = false;
+  brushButton.innerText = "Waterpaint";
+  return false;
+})
+
+brushButton.addEventListener("click", function () {
+  isErasing = false;
+  if (isWaterpaint) {
     isWaterpaint = false;
     isDrafting = true;
-    eraserButton.innerText = "Eraser";
+    brushButton.innerText = "Waterpaint";
   } else {
-    isErasing = true;
-    isWaterpaint = false;
+    isWaterpaint = true;
     isDrafting = false;
-    eraserButton.innerText = "BrushB";
+    brushButton.innerText = "/////";
   }
 })
 
@@ -108,7 +111,7 @@ function touchMoved() {
     } else if (isWaterpaint) {
       waterpaint(touch.x, touch.y);
     } else {
-      pg.stroke(171, 171, 169);
+      pg.stroke(182, 194, 207);
       pg.strokeWeight(5);
       pg.line(touch.x, touch.y, touch.x - 10, touch.y - 10);
     }
