@@ -211,7 +211,7 @@ function sendImageToServer(blob) {
 }
 
 function gotodisplay() {
-  window.location.href = "../display";
+  window.location.href = "../display/index.html";
 }
 
 function showmainbd() {
