@@ -129,7 +129,7 @@ const io = new Server(HTTPSserver); // start socket io
 
 
 // let bodyparts = [];
-// let display;
+let displayShowSocketID = undefined;
 
 let DATA_PATH = "image-data.json";
 try {
@@ -165,7 +165,15 @@ io.on('connection', (socket) => {
 
             let recentBodyParts = getMostRecentBodyPart()
             socket.emit("randomBodyParts", recentBodyParts)
+        }else if (data.role == "display-show") {
+            // display = socket.id;
+            console.log("display page loaded");
+            displayShowSocketID = socket.id;
+
+            let recentBodyParts = getMostRecentBodyPart()
+            socket.emit("randomBodyParts", recentBodyParts)
         }
+
     })
 
     socket.on("shuffle-request", () => {
@@ -186,6 +194,10 @@ io.on('connection', (socket) => {
         }
         images.push(bodyptinfo);
 
+        if(displayShowSocketID != undefined){
+            io.to(displayShowSocketID).emit("new-part-from-server", bodyptinfo)
+        }
+
         try {
             fs.writeFileSync(DATA_PATH, JSON.stringify(images, null, 2), 'utf-8');
         } catch (e) {
@@ -199,6 +211,9 @@ io.on('connection', (socket) => {
 
     socket.on("disconnect", function () {
         console.log("someone disconnected", socket.id)
+        if(socket.id == displayShowSocketID){
+            displayShowSocketID = undefined
+        }
         // console.log(bodyparts);
 
         // let idx = bodyparts.findIndex(function (f) {
